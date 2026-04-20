@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.7.3/core.css">
+    <script type="module" src="https://pyscript.net/releases/2025.7.3/core.js"></script>
+    <py-config>
+        packages = ["numpy", "matplotlib"]
+    </py-config>
+</head>
+<body class="bg-primary p-3">
+    <div class="row">   
+        <div class="col-4 bg-light text-center p-2 bg-danger-subtle rounded-4 container-fluid">
+            <p class="fs-3 fw-bold text-danger">Attendance Tracker</p><hr>
+            <form>
+                <label class="fw-bold">Select Day</label><br>
+                <select name="days" id="d" required class="form-control border border-2 border-dark text-start fw-bold">
+                    <option class="fw-bold" disabled selected>Select</option>
+                    <option class="fw-bold" value="Monday">Monday</option>
+                    <option class="fw-bold" value="Tuesday">Tuesday</option>
+                    <option class="fw-bold" value="Wednesday">Wednesday</option>
+                    <option class="fw-bold" value="Thursday">Thursday</option>
+                    <option class="fw-bold" value="Friday">Friday</option>
+                </select><br>
+                <label class="fw-bold">Absences</label><br>
+                <input required id="a" class="form-control text-start fw-bold border border-2 border-dark" type="number"><br>
+                <input type="button" class="btn btn-danger fw-bold form-control rounded-2" value="Submit" py-click="grap"><br><br>
+                <input type="reset" class="btn btn-success fw-bold form-control rounded 5" onclick="location.reload(    )" value="Reset">
+            </form>
+        </div>
+        <div class="col-1 me-5 ms-5 bg-dark container-fluid"></div>
+        <div class="col-6 bg-light text-center container-fluid" id="out"></div>
+    </div>
+    <script type="py" src="main.py"></script>
+</body>
+</html>
